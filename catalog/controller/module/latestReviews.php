@@ -61,7 +61,7 @@ class ControllerModuleLatestReviews extends Controller
 
             $text = html_entity_decode($result['text'], ENT_QUOTES, 'UTF-8');
 
-            $ready_text = (strlen($text) >= $setting['entry_review_lenght'])?mb_substr($text, 0, $setting['entry_review_lenght']).' ...':$setting['entry_review_lenght'];
+            $ready_text = (strlen($text) >= $setting['entry_review_lenght'])?mb_substr($text, 0, $setting['entry_review_lenght']).' ...':$text;
 
             $this->data['products'][] = array(
                 'product_id' => $result['product_id'],

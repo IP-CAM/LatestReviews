@@ -28,7 +28,6 @@
                         <div class="">
                             <?php echo $product['author'] ?>
                             <br/>
-                            <br/>
                             <?php echo $product['text'] ?>
                         </div>
                         <div class="cart"><input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" /></div>
