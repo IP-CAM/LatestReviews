@@ -59,9 +59,9 @@
                 <select name="latestReviews_module[<?php echo $module_row; ?>][cycle]">
                     <?php if($module['cycle'] == 0) { ?>
                     <option value="0" selected="selected" >No</option>
-                    <option value="1" >Vertical</option>
+                    <option value="1" >Yes</option>
                     <?php } else { ?>
-                    <option value="0" >Horizontal</option>
+                    <option value="0" >No</option>
                     <option value="1" selected="selected" >Yes</option>
                     <?php } ?>
                 </select>

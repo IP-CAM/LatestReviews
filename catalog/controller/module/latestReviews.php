@@ -5,6 +5,14 @@ class ControllerModuleLatestReviews extends Controller
     protected function index($setting)
     {
 
+        $this->document->addScript('catalog/view/javascript/jquery/jquery.jcarousel.min.js');
+
+        if (file_exists('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css')) {
+            $this->document->addStyle('catalog/view/theme/' . $this->config->get('config_template') . '/stylesheet/carousel.css');
+        } else {
+            $this->document->addStyle('catalog/view/theme/default/stylesheet/carousel.css');
+        }
+
         $this->language->load('module/latestReviews');
 
         $this->data['heading_title'] = $this->language->get('heading_title');
@@ -30,7 +38,7 @@ class ControllerModuleLatestReviews extends Controller
             if ($result['image']) {
                 $image = $this->model_tool_image->resize($result['image'], $setting['image_width'], $setting['image_height']);
             } else {
-                $image = false;
+                $image = $this->model_tool_image->resize('no_image.jpg', $setting['image_width'], $setting['image_height']);
             }
 
             if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
@@ -73,7 +81,7 @@ class ControllerModuleLatestReviews extends Controller
                 'limit' => $setting['limit'],
                 'visible' => $setting['visible'],
                 'scroll' => $setting['scroll'],
-                'cycle' => $setting['cycle'],
+                'cycle' => ($setting['cycle'] == 0)?'first':'circular',
                 'module' => $setting['layout_id'].'_'.$setting['entry_review_lenght']
             );
         }
