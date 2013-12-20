@@ -29,12 +29,15 @@ class ControllerModulelatestReviews extends Controller {
 		$this->data['entry_limit'] = $this->language->get('entry_limit');
 		$this->data['entry_visible'] = $this->language->get('entry_visible');
 		$this->data['entry_vertical'] = $this->language->get('entry_vertical');
+		$this->data['entry_scroll'] = $this->language->get('entry_scroll');
+		$this->data['entry_cycle'] = $this->language->get('entry_cycle');
 		$this->data['entry_image'] = $this->language->get('entry_image');
 		$this->data['entry_layout'] = $this->language->get('entry_layout');
 		$this->data['entry_position'] = $this->language->get('entry_position');
 		$this->data['entry_status'] = $this->language->get('entry_status');
 		$this->data['entry_sort_order'] = $this->language->get('entry_sort_order');
-		
+		$this->data['entry_review_lenght'] = $this->language->get('entry_review_lenght');
+
 		$this->data['button_save'] = $this->language->get('button_save');
 		$this->data['button_cancel'] = $this->language->get('button_cancel');
 		$this->data['button_add_module'] = $this->language->get('button_add_module');
